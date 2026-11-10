@@ -1,0 +1,1054 @@
+<!-- ... existing code ... -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العرض الفني والتجاري | توفير فريق مبيعات متخصص – Our SMS × KAF Group</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Cairo & IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kaf: {
+                            navy: '#051329',
+                            darkSlate: '#0A1A32',
+                            cardBg: '#0F2342',
+                            border: '#1E3A64',
+                            cyan: '#00C6FF',
+                            cyanDark: '#0072FF',
+                            emerald: '#10B981',
+                            emeraldDark: '#059669',
+                            purple: '#8B5CF6',
+                            gold: '#F59E0B',
+                            amber: '#D97706',
+                            rose: '#F43F5E',
+                            grayText: '#94A3B8'
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        ibm: ['IBM Plex Sans Arabic', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'glow-cyan': '0 0 35px -5px rgba(0, 198, 255, 0.4)',
+                        'glow-emerald': '0 0 35px -5px rgba(16, 185, 129, 0.4)',
+                        'glow-purple': '0 0 35px -5px rgba(139, 92, 246, 0.4)',
+                        'web-card': '0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #051329;
+            color: #F1F5F9;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #051329;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E3A64;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00C6FF;
+        }
+
+        /* Interactive Canvas Background */
+        #interactive-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.75;
+        }
+
+        /* Ambient Gradient Blobs */
+        .ambient-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.22;
+            z-index: 0;
+            pointer-events: none;
+            animation: floatBlob 18s ease-in-out infinite alternate;
+        }
+        .blob-1 { top: -10%; right: -5%; width: 550px; height: 550px; background: #00C6FF; }
+        .blob-2 { bottom: 10%; left: -10%; width: 600px; height: 600px; background: #10B981; animation-delay: -6s; }
+        .blob-3 { top: 40%; right: 30%; width: 450px; height: 450px; background: #8B5CF6; animation-delay: -12s; }
+
+        @keyframes floatBlob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(40px, -60px) scale(1.1); }
+            100% { transform: translate(-30px, 50px) scale(0.95); }
+        }
+
+        /* Top Accent Ribbon */
+        .kaf-ribbon {
+            background: linear-gradient(90deg, #00C6FF 0%, #0072FF 30%, #10B981 60%, #8B5CF6 85%, #F59E0B 100%);
+            height: 4px;
+        }
+
+        /* Glassmorphic Cards */
+        .web-card-cyan {
+            background: linear-gradient(135deg, rgba(15, 35, 66, 0.85) 0%, rgba(8, 20, 40, 0.95) 100%);
+            border: 1px solid rgba(0, 198, 255, 0.28);
+            backdrop-filter: blur(14px);
+            transition: all 0.3s ease;
+        }
+        .web-card-cyan:hover {
+            border-color: rgba(0, 198, 255, 0.7);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px -10px rgba(0, 198, 255, 0.35);
+        }
+
+        .web-card-emerald {
+            background: linear-gradient(135deg, rgba(10, 42, 35, 0.85) 0%, rgba(5, 24, 20, 0.95) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.28);
+            backdrop-filter: blur(14px);
+            transition: all 0.3s ease;
+        }
+        .web-card-emerald:hover {
+            border-color: rgba(16, 185, 129, 0.7);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px -10px rgba(16, 185, 129, 0.35);
+        }
+
+        .web-card-purple {
+            background: linear-gradient(135deg, rgba(28, 20, 52, 0.85) 0%, rgba(14, 9, 30, 0.95) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.28);
+            backdrop-filter: blur(14px);
+            transition: all 0.3s ease;
+        }
+        .web-card-purple:hover {
+            border-color: rgba(139, 92, 246, 0.7);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px -10px rgba(139, 92, 246, 0.35);
+        }
+
+        .web-card-gold {
+            background: linear-gradient(135deg, rgba(42, 30, 12, 0.85) 0%, rgba(22, 15, 5, 0.95) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.32);
+            backdrop-filter: blur(14px);
+            transition: all 0.3s ease;
+        }
+        .web-card-gold:hover {
+            border-color: rgba(245, 158, 11, 0.75);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px -10px rgba(245, 158, 11, 0.35);
+        }
+
+        /* Floating Icon Animations */
+        @keyframes float-alive-left {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+        @keyframes float-alive-right {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-8px) scale(1.05); }
+        }
+
+        .animate-floating-kaaf { animation: float-alive-right 4s ease-in-out infinite; }
+        .animate-floating-whatsapp { animation: float-alive-left 4s ease-in-out infinite 0.6s; }
+
+        .nav-item {
+            position: relative;
+            transition: color 0.2s;
+        }
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #00C6FF;
+            transition: width 0.3s ease;
+        }
+        .nav-item:hover::after { width: 100%; }
+
+        @media print {
+            body { background: #FFFFFF !important; color: #0F172A !important; }
+            #interactive-canvas, .ambient-blob, #floating-website-btn, #floating-whatsapp-btn, header { display: none !important; }
+            .web-card-cyan, .web-card-emerald, .web-card-purple, .web-card-gold {
+                background: #FFFFFF !important;
+                color: #0F172A !important;
+                border: 1px solid #CBD5E1 !important;
+                box-shadow: none !important;
+            }
+            h1, h2, h3, h4 { color: #0F2342 !important; }
+            .text-white, .text-gray-300, .text-kaf-grayText { color: #1E293B !important; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-kaf-cyan selection:text-kaf-navy">
+
+    <!-- Interactive Canvas & Ambient Blobs -->
+    <canvas id="interactive-canvas"></canvas>
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+
+    <!-- Top Accent Ribbon -->
+    <div class="kaf-ribbon fixed top-0 left-0 right-0 z-50"></div>
+
+    <!-- Top Navigation Header -->
+    <header class="sticky top-1 z-40 bg-kaf-navy/90 backdrop-blur-xl border-b border-kaf-border/80 px-4 sm:px-8 py-3 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="https://kaafmarketing.sa/" target="_blank" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl overflow-hidden border border-kaf-cyan/50 p-0.5 bg-black shadow-glow-cyan transition-transform group-hover:scale-105">
+                    <img src="https://i.ibb.co/qKTyhpv/Whats-App-Image-2026-08-26-at-11-29-58.jpg" alt="KAF Group Logo" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-base font-black text-white font-ibm">KAF <span class="text-kaf-cyan">Group</span></span>
+                        <span class="px-2 py-0.5 rounded-full bg-kaf-cyan/20 text-kaf-cyan text-[10px] font-extrabold border border-kaf-cyan/40">B2B Sales Outsourcing</span>
+                    </div>
+                    <p class="text-[10px] text-kaf-grayText font-medium">B2B Sales Operations • Market Qualification</p>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-4 text-xs font-bold text-gray-300">
+                <a href="#slide-1" class="nav-item hover:text-white">الغلاف</a>
+                <a href="#slide-2" class="nav-item hover:text-white">فهم Our SMS</a>
+                <a href="#slide-4" class="nav-item hover:text-white">فريق المبيعات</a>
+                <a href="#slide-6" class="nav-item hover:text-white">الأنظمة الرقمية</a>
+                <a href="#slide-8" class="nav-item hover:text-white">منهجية التأهيل</a>
+                <a href="#slide-10" class="nav-item hover:text-white">الخطة الزمنية</a>
+                <a href="#slide-12" class="px-4 py-1.5 rounded-full bg-gradient-to-r from-kaf-cyan to-kaf-cyanDark text-white font-black hover:brightness-110 shadow-glow-cyan transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-receipt text-xs"></i>
+                    <span>الاستثمار المالي (10,500 ر.س)</span>
+                </a>
+            </nav>
+
+            <div class="hidden sm:flex flex-col text-left font-ibm border-l border-kaf-border/80 pl-3">
+                <span class="text-[10px] text-kaf-cyan font-bold uppercase">PROPOSAL PREPARED FOR</span>
+                <span class="text-xs font-black text-white">Our SMS Executive Team</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- RIGHT FLOATING BUTTON: OFFICIAL WEBSITE -->
+    <aside id="floating-website-btn" class="fixed bottom-6 right-6 z-50">
+        <a href="https://kaafmarketing.sa/" target="_blank" title="زيارة موقع KAF Group الرسمي" class="block w-14 h-14 rounded-full overflow-hidden border-2 border-kaf-cyan/90 p-0.5 bg-black/90 animate-floating-kaaf transition-transform hover:scale-110 active:scale-95 shadow-glow-cyan backdrop-blur-md">
+            <img src="https://i.ibb.co/qKTyhpv/Whats-App-Image-2026-08-26-at-11-29-58.jpg" alt="KAF Group Logo" class="w-full h-full object-cover rounded-full">
+        </a>
+    </aside>
+
+    <!-- LEFT FLOATING BUTTON: WHATSAPP & PHONE CONTACT -->
+    <aside id="floating-whatsapp-btn" class="fixed bottom-6 left-6 z-50">
+        <a href="https://wa.me/966579346395?text=السلام%20عليكم،%20أود%20مناقشة%20عرض%20توفير%20فريق%20المبيعات%20الخارجي%20لشركة%20Our%20SMS" target="_blank" title="تواصل مباشر عبر الواتساب والاتصال" class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center border-2 border-emerald-300 animate-floating-whatsapp transition-transform hover:scale-110 active:scale-95 shadow-lg">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
+    </aside>
+
+    <!-- MAIN PROPOSAL SLIDES CONTAINER -->
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 1 — COVER                                                           -->
+        <!-- ========================================================================= -->
+        <section id="slide-1" class="web-card-cyan rounded-[32px] p-8 sm:p-14 relative overflow-hidden">
+            <div class="kaf-ribbon absolute top-0 left-0 right-0"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-kaf-cyan/20 border border-kaf-cyan/40 text-kaf-cyan text-xs font-bold font-ibm">
+                        <i class="fa-solid fa-handshake text-kaf-cyan"></i>
+                        <span>عرض فني وتجاري متخصص • توفير فريق مبيعات خارجي B2B</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h1 class="text-3xl sm:text-5xl font-black text-white leading-tight tracking-tight">
+                            منظومة المبيعات الخارجية المتكاملة
+                            <span class="block text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-l from-kaf-cyan via-emerald-300 to-kaf-purple font-ibm mt-2">
+                                لصالح شركة Our SMS (Outsourced Sales Team)
+                            </span>
+                        </h1>
+                        <p class="text-base sm:text-xl font-bold text-gray-200">
+                            مقدم من: مجموعة كاف للتطوير والتسويق – KAF Group
+                        </p>
+                    </div>
+
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-2xl font-normal">
+                        توفير وإدارة فريق مبيعات خارجي متخصص يتولى استقطاب العملاء المحتملين في السوق السعودي، والتواصل مع صناع القرار، واكتشاف الاحتياجات وتأهيل الفرص البيعية الجادة قبل تحويلها لفريق Our SMS لاستكمال إجراءات التعاقد.
+                    </p>
+
+                    <div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-center">
+                        <div class="p-3 rounded-2xl bg-black/40 border border-white/10">
+                            <span class="text-kaf-grayText block text-[10px]">مقدم العرض</span>
+                            <strong class="text-white text-sm">KAF Group</strong>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-black/40 border border-white/10">
+                            <span class="text-kaf-grayText block text-[10px]">الجهة المستهدفة</span>
+                            <strong class="text-kaf-cyan text-sm">Our SMS</strong>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-black/40 border border-white/10">
+                            <span class="text-kaf-grayText block text-[10px]">مدة التعاقد</span>
+                            <strong class="text-white text-sm">3 أشهر متواصلة</strong>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-black/40 border border-white/10">
+                            <span class="text-kaf-grayText block text-[10px]">الاستثمار المالي</span>
+                            <strong class="text-kaf-emerald text-sm">10,500 ر.س</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4 flex justify-center">
+                    <div class="w-full max-w-sm space-y-4 p-6 rounded-3xl bg-kaf-navy/90 border border-kaf-cyan/40 shadow-2xl backdrop-blur-md">
+                        <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                            <span class="text-xs font-black text-white flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-kaf-cyan animate-pulse"></span>
+                                وثيقة العرض المعتمد
+                            </span>
+                            <span class="text-[10px] text-kaf-cyan font-mono font-bold">KAF B2B SCOPE</span>
+                        </div>
+
+                        <div class="space-y-3 text-xs">
+                            <div class="p-3 rounded-xl bg-kaf-darkSlate/90 border border-white/10 flex justify-between items-center">
+                                <span class="text-gray-400">نطاق الخدمة:</span>
+                                <span class="font-bold text-white">Outsourced Sales Team</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-kaf-darkSlate/90 border border-white/10 flex justify-between items-center">
+                                <span class="text-gray-400">الأنظمة المرفقة:</span>
+                                <span class="font-bold text-kaf-cyan">CRM + VoIP System</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-kaf-darkSlate/90 border border-white/10 flex justify-between items-center">
+                                <span class="text-gray-400">رقم التواصل المباشر:</span>
+                                <span class="font-bold text-kaf-emerald font-mono">+966 57 934 6395</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="#slide-12" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-gradient-to-r from-kaf-cyan to-kaf-cyanDark text-white font-black text-xs hover:brightness-110 shadow-md transition">
+                                <span>استعراض الاستثمار المالي (10,500 ر.س)</span>
+                                <i class="fa-solid fa-arrow-left text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 2 — UNDERSTANDING OUR SMS BUSINESS & SOLUTIONS                      -->
+        <!-- ========================================================================= -->
+        <section id="slide-2" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-kaf-border pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-kaf-cyan/20 text-kaf-cyan font-black text-xs border border-kaf-cyan/40">02</span>
+                    <h2 class="text-2xl font-black text-white">فهمنا لنشاط Our SMS والقيمة التجارية للخدمات</h2>
+                </div>
+                <span class="text-xs text-kaf-cyan font-bold hidden sm:inline">Business Understanding & Value Mapping</span>
+            </div>
+
+            <div class="web-card-cyan rounded-3xl p-6 sm:p-8 space-y-6">
+                <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-medium">
+                    تستند رؤية KAF Group إلى دراسة دقيقة لمنصّة <strong class="text-white">Our SMS</strong> بوصفها مزوداً رئيسياً لحلول الاتصالات الرقمية والتكامل التقني بالمملكة العربية السعودية. يعمل فريق المبيعات المخصص على ربط الخدمات التقنية بالتحديات التجارية الفعلية لدى القطاعات المستهدفة:
+                </p>
+
+                <!-- Solutions & Value Matrix -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+                        <div class="flex items-center gap-2 text-kaf-cyan font-bold text-sm">
+                            <i class="fa-solid fa-comment-sms"></i>
+                            <span>Bulk SMS & OTP SMS</span>
+                        </div>
+                        <p class="text-xs text-gray-300">حل إشعار العميل فوراً والتحقق الآمن من الحسابات والمعاملات المالية وتقليل الفقد في رحلة التسجيل.</p>
+                        <span class="text-[10px] text-kaf-grayText block border-t border-white/5 pt-1">المستهدف: المتاجر الإلكترونية، البنوك، القطاع الصحي.</span>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+                        <div class="flex items-center gap-2 text-[#25D366] font-bold text-sm">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>WhatsApp Business API</span>
+                        </div>
+                        <p class="text-xs text-gray-300">قناة تواصل تفاعلية ومباشرة لرفع معدلات الاستجابة وتفعيل الدعم الفني والإشعارات التلقائية الفورية.</p>
+                        <span class="text-[10px] text-kaf-grayText block border-t border-white/5 pt-1">المستهدف: الشركات الخدمية، الجمعيات، المؤسسات التعليمية.</span>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+                        <div class="flex items-center gap-2 text-kaf-purple font-bold text-sm">
+                            <i class="fa-solid fa-code"></i>
+                            <span>SMS & Email & Push APIs</span>
+                        </div>
+                        <p class="text-xs text-gray-300">ربط وتكامل تقني برمجي آلي مع أنظمة الشركات (ERP/CRM/Apps) لتلقائية التنبيهات والرسائل.</p>
+                        <span class="text-[10px] text-kaf-grayText block border-t border-white/5 pt-1">المستهدف: شركات التقنية المالية، المنصات، التطبيقات.</span>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2 lg:col-span-3">
+                        <div class="flex items-center gap-2 text-kaf-gold font-bold text-sm">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                            <span>Email to SMS & Corporate Telecom Solutions</span>
+                        </div>
+                        <p class="text-xs text-gray-300">تحويل الإيميلات الرسمية إلى رسائل نصية قصيرة وتوفير حلول اتصال موحدة للمنشآت الحكومية والخاصة لضمان استمرارية التنبيهات التشغيلية الحساسة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 3 — THE SALES OPPORTUNITY & CHALLENGES                              -->
+        <!-- ========================================================================= -->
+        <section id="slide-3" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-kaf-border pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-kaf-purple/20 text-kaf-purple font-black text-xs border border-kaf-purple/40">03</span>
+                    <h2 class="text-2xl font-black text-white">الفرصة البيعية والتحديات التشغيلية</h2>
+                </div>
+                <span class="text-xs text-kaf-purple font-bold hidden sm:inline">Opportunity & Market Gap</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Challenges -->
+                <div class="web-card-purple rounded-3xl p-6 sm:p-8 space-y-4">
+                    <h3 class="text-lg font-black text-white flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-kaf-rose"></i>
+                        التحديات الحالية في بيع حلول الـ B2B SaaS
+                    </h3>
+                    <ul class="space-y-3 text-xs text-gray-300">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-xmark text-kaf-rose mt-0.5"></i>
+                            <span>صعوبة الوصول المباشر لأصحاب القرار في القطاعات التقنية والتسويقية والمالية.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-xmark text-kaf-rose mt-0.5"></i>
+                            <span>هدر وقت موظفي المبيعات الداخليين في إجراء مكالمات باردة غير مؤهلة بدلاً من إغلاق الصفقات.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-xmark text-kaf-rose mt-0.5"></i>
+                            <span>غياب نظام CRM مرن لمتابعة وتوثيق جميع اعتراضات واحتياجات العملاء بالسوق السعودي.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Strategic Opportunity -->
+                <div class="web-card-emerald rounded-3xl p-6 sm:p-8 space-y-4">
+                    <h3 class="text-lg font-black text-white flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb text-kaf-emerald"></i>
+                        الفرصة الاستراتيجية مع KAF Group
+                    </h3>
+                    <ul class="space-y-3 text-xs text-gray-300">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-kaf-emerald mt-0.5"></i>
+                            <span>توفير فريق مبيعات خارجي مخصص يتولى بناء الـ Pipeline وتصفيته بدقة عالية.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-kaf-emerald mt-0.5"></i>
+                            <span>تسليم فريق Our SMS فرصاً بيعية مؤهلة وجاهزة للمناقشات الفنية والتعاقد المباشر.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-check text-kaf-emerald mt-0.5"></i>
+                            <span>تخفيض تكلفة الاستحواذ وتأسيس بنية تشغيلية بيعية منظمة وقابلة للتوسع المستمر.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 4 — PROPOSED SOLUTION: OUTSOURCED SALES TEAM                        -->
+        <!-- ========================================================================= -->
+        <section id="slide-4" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-kaf-border pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-kaf-cyan/20 text-kaf-cyan font-black text-xs border border-kaf-cyan/40">04</span>
+                    <h2 class="text-2xl font-black text-white">الحل المقترح – Outsourced Sales Team</h2>
+                </div>
+                <span class="text-xs text-kaf-cyan font-bold hidden sm:inline">The Core Operational Solution</span>
+            </div>
+
+            <div class="web-card-cyan rounded-3xl p-8 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-5 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+                        <div class="w-10 h-10 rounded-xl bg-kaf-cyan/20 text-kaf-cyan flex items-center justify-center font-bold text-lg">1</div>
+                        <h4 class="text-sm font-black text-white">توفير وتجهيز الكادر البيعي</h4>
+                        <p class="text-xs text-gray-300">فريق مبيعات متخصص ومدرّب على حلول الاتصالات وتقنيات SaaS للتواصل الاحترافي مع الشركات.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+                        <div class="w-10 h-10 rounded-xl bg-kaf-emerald/20 text-kaf-emerald flex items-center justify-center font-bold text-lg">2</div>
+                        <h4 class="text-sm font-black text-white">البنية التقنية الكاملة</h4>
+                        <p class="text-xs text-gray-300">توفير نظام الاتصال VoIP ونظام CRM وإدارة أرقام الحملات والقنوات الرقمية دون أي عبء تشغيلي.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+                        <div class="w-10 h-10 rounded-xl bg-kaf-purple/20 text-kaf-purple flex items-center justify-center font-bold text-lg">3</div>
+                        <h4 class="text-sm font-black text-white">تأهيل وتحويل الفرص</h4>
+                        <p class="text-xs text-gray-300">تصفية البيانات وتحديد الاحتياج واختبار الجدية قبل تحويل العميل المؤهل لاستكمال التعاقد مع Our SMS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 5 — SALES TEAM PROVISION & SETUP                                    -->
+        <!-- ========================================================================= -->
+        <section id="slide-5" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-kaf-border pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-kaf-emerald/20 text-kaf-emerald font-black text-xs border border-kaf-emerald/40">05</span>
+                    <h2 class="text-2xl font-black text-white">توفير وتجهيز فريق المبيعات المخصص</h2>
+                </div>
+                <span class="text-xs text-kaf-emerald font-bold hidden sm:inline">Sales Team Setup & Quality</span>
+            </div>
+
+            <div class="web-card-emerald rounded-3xl p-6 sm:p-8 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-gray-300">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2 text-white font-bold text-sm">
+                            <i class="fa-solid fa-user-check text-kaf-emerald"></i>
+                            <span>تأهيل وتدريب الفريق البيعي</span>
+                        </div>
+                        <p>توفير موظفين متخصصين في بيع الشركات (B2B)، وتدريبهم مكثفاً على منتجات Our SMS (Bulk, OTP, WhatsApp, APIs) وفهم القيمة التجارية الخاصة بكافة الخدمات بدلاً من حفظ الخصائص النظرية.</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2 text-white font-bold text-sm">
+                            <i class="fa-solid fa-sliders text-kaf-emerald"></i>
+                            <span>السيناريوهات وضبط الجودة</span>
+                        </div>
+                        <p>إعداد أساليب التواصل وسيناريوهات المكالمات البيعية المخصصة لكل قطاع، مع المتابعة الميدانية والدورية لضمان الالتزام بالمعايير البيعية وأخلاقيات التواصل مع المنشآت.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 6 — OPERATIONAL INFRASTRUCTURE (VOIP, CRM & DIGITAL)                -->
+        <!-- ========================================================================= -->
+        <section id="slide-6" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-kaf-border pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-kaf-purple/20 text-kaf-purple font-black text-xs border border-kaf-purple/40">06</span>
+                    <h2 class="text-2xl font-black text-white">البنية التشغيلية: نظام الاتصال، الـ CRM، والقنوات الرقمية</h2>
+                </div>
+                <span class="text-xs text-kaf-purple font-bold hidden sm:inline">VoIP, CRM & Channels Setup</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- VoIP System -->
+                <div class="web-card-cyan rounded-3xl p-6 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <i class="fa-solid fa-phone-volume text-2xl text-kaf-cyan"></i>
+                        <span class="text-[10px] font-mono font-bold text-kaf-cyan">VOIP SYSTEM</span>
+                    </div>
+                    <h3 class="text-base font-black text-white">نظام الاتصال الاحترافي</h3>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-kaf-cyan"></i> <span>نظام اتصالات مخصص للحملات البيعية.</span></li>
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-kaf-cyan"></i> <span>تسجيل المكالمات لأغراض الجودة والتقييم.</span></li>
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-kaf-cyan"></i> <span>إدارة وأرشفة الأرقام المستخدمة بالحملات.</span></li>
+                    </ul>
+                </div>
+
+                <!-- CRM System -->
+                <div class="web-card-purple rounded-3xl p-6 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <i class="fa-solid fa-diagram-project text-2xl text-kaf-purple"></i>
+                        <span class="text-[10px] font-mono font-bold text-kaf-purple">CRM PLATFORM</span>
+                    </div>
+                    <h3 class="text-base font-black text-white">نظام إدارة العملاء CRM</h3>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-kaf-purple"></i> <span>تسجيل كافة بيانات التفاعلات والملاحظات.</span></li>
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-kaf-purple"></i> <span>متابعة رحلة العميل منذ أول تواصل.</span></li>
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-kaf-purple"></i> <span>توثيق الاعتراضات والفرص المؤهلة.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Digital Channels -->
+                <div class="web-card-emerald rounded-3xl p-6 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <i class="fa-brands fa-whatsapp text-2xl text-kaf-emerald"></i>
+                        <span class="text-[10px] font-mono font-bold text-kaf-emerald">DIGITAL CHANNELS</span>
+                    </div>
+                    <h3 class="text-base font-black text-white">القنوات الرقمية والهوية</h3>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-kaf-emerald"></i> <span>إعداد حساب WhatsApp Business المخصص.</span></li>
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-kaf-emerald"></i> <span>تجهيز Campaign Profile يعكس هوية Our SMS.</span></li>
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-kaf-emerald"></i> <span>توحيد أسلوب الرسائل والافتتاحيات.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 7 — DATA COLLECTION & TARGETING STRATEGY                            -->
+        <!-- ========================================================================= -->
+        <section id="slide-7" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-kaf-border pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-kaf-gold/20 text-kaf-gold font-black text-xs border border-kaf-gold/40">07</span>
+                    <h2 class="text-2xl font-black text-white">استراتيجية تجميع وتنظيم قواعد البيانات</h2>
+                </div>
+                <span class="text-xs text-kaf-gold font-bold hidden sm:inline">Data Generation & Segmentation</span>
+            </div>
+
+            <div class="web-card-gold rounded-3xl p-6 sm:p-8 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-gray-300">
+                    <div class="space-y-3">
+                        <h4 class="text-sm font-black text-white flex items-center gap-2">
+                            <i class="fa-solid fa-database text-kaf-gold"></i>
+                            بناء قوائم البيانات النوعية
+                        </h4>
+                        <p>البحث والوصول إلى الشركات المستهدفة من مصادر متعددة، وتصفيتها بناءً على ملاءمة النشاط لخدمات Our SMS، بدلاً من الاعتماد على القوائم العشوائية ذات الكفاءة المنخفضة.</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h4 class="text-sm font-black text-white flex items-center gap-2">
+                            <i class="fa-solid fa-filter text-kaf-gold"></i>
+                            التصنيف والتحديث المستمر
+                        </h4>
+                        <p>تصنيف الشركات حسب القطاع (متاجر، صحة، تعليم، مالية) وحجم النشاط، وتحديث قواعد البيانات بصورة دورية طوال فترة التعاقد للحفاظ على دقة الوصول.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 8 — DECISION MAKER REACH & LEAD QUALIFICATION METHODOLOGY           -->
+        <!-- ========================================================================= -->
+        <section id="slide-8" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-kaf-border pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-kaf-cyan/20 text-kaf-cyan font-black text-xs border border-kaf-cyan/40">08</span>
+                    <h2 class="text-2xl font-black text-white">التواصل مع صناع القرار وتأهيل الفرص (Lead Qualification)</h2>
+                </div>
+                <span class="text-xs text-kaf-cyan font-bold hidden sm:inline">Prospecting & Qualification Process</span>
+            </div>
+
+            <div class="web-card-cyan rounded-3xl p-8 space-y-6">
+                <!-- 10-Step Workflow Diagram -->
+                <h3 class="text-base font-black text-white mb-4">رحلة العمل التشغيلية (10 مراحل من الاستقطاب حتى التحويل):</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center text-xs">
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="w-6 h-6 rounded-full bg-kaf-cyan/20 text-kaf-cyan font-bold inline-flex items-center justify-center text-xs">1</span>
+                        <span class="block font-bold text-white">دراسة خدمات Our SMS</span>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="w-6 h-6 rounded-full bg-kaf-cyan/20 text-kaf-cyan font-bold inline-flex items-center justify-center text-xs">2</span>
+                        <span class="block font-bold text-white">تحديد مواصفات العميل ICP</span>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="w-6 h-6 rounded-full bg-kaf-cyan/20 text-kaf-cyan font-bold inline-flex items-center justify-center text-xs">3</span>
+                        <span class="block font-bold text-white">بناء قواعد البيانات</span>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="w-6 h-6 rounded-full bg-kaf-cyan/20 text-kaf-cyan font-bold inline-flex items-center justify-center text-xs">4</span>
+                        <span class="block font-bold text-white">تحديد صناع القرار</span>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="w-6 h-6 rounded-full bg-kaf-cyan/20 text-kaf-cyan font-bold inline-flex items-center justify-center text-xs">5</span>
+                        <span class="block font-bold text-white">بدء التواصل الفعال</span>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="w-6 h-6 rounded-full bg-kaf-emerald/20 text-kaf-emerald font-bold inline-flex items-center justify-center text-xs">6</span>
+                        <span class="block font-bold text-white">اكتشاف الاحتياجات</span>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="w-6 h-6 rounded-full bg-kaf-emerald/20 text-kaf-emerald font-bold inline-flex items-center justify-center text-xs">7</span>
+                        <span class="block font-bold text-white">تأهيل العميل وتوثيقه</span>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="w-6 h-6 rounded-full bg-kaf-emerald/20 text-kaf-emerald font-bold inline-flex items-center justify-center text-xs">8</span>
+                        <span class="block font-bold text-white">تحويل الفرصة لـ Our SMS</span>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="w-6 h-6 rounded-full bg-kaf-purple/20 text-kaf-purple font-bold inline-flex items-center justify-center text-xs">9</span>
+                        <span class="block font-bold text-white">متابعة حالة الفرصة</span>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="w-6 h-6 rounded-full bg-kaf-purple/20 text-kaf-purple font-bold inline-flex items-center justify-center text-xs">10</span>
+                        <span class="block font-bold text-white">تحليل الأداء والتطوير</span>
+                    </div>
+                </div>
+
+                <!-- Qualification Scope Box -->
+                <div class="p-4 rounded-2xl bg-black/50 border border-kaf-cyan/40 text-xs text-gray-300 space-y-2">
+                    <span class="text-kaf-cyan font-bold block">معايير تأهيل الفرصة البيعية (Qualified Lead):</span>
+                    <p class="leading-relaxed">
+                        • التأكد من وجود احتياج حقيقي أو محتمل لخدمات Our SMS • تحديد الحل التقني المناسب للعميل • معرفة النظام الحالي المستخدم إن أمكن • الوصول إلى متخذ القرار • توثيق كافة المتطلبات والتحفظات داخل الـ CRM قبل التحويل النهائي.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 9 — REPORTING & KPIS FRAMEWORK                                      -->
+        <!-- ========================================================================= -->
+        <section id="slide-9" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-kaf-border pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-kaf-purple/20 text-kaf-purple font-black text-xs border border-kaf-purple/40">09</span>
+                    <h2 class="text-2xl font-black text-white">التقارير ومؤشرات قياس الأداء KPIs</h2>
+                </div>
+                <span class="text-xs text-kaf-purple font-bold hidden sm:inline">Performance Metrics & Reporting</span>
+            </div>
+
+            <div class="web-card-purple rounded-3xl p-6 sm:p-8 space-y-6">
+                <!-- Terminology Distinction -->
+                <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-center text-xs">
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10">
+                        <span class="text-kaf-grayText block text-[10px]">العميل المحتمل</span>
+                        <strong class="text-white text-xs">Lead (قاعدة بيانات)</strong>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10">
+                        <span class="text-kaf-grayText block text-[10px]">العميل المهتم</span>
+                        <strong class="text-kaf-cyan text-xs">Interested Prospect</strong>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10">
+                        <span class="text-kaf-grayText block text-[10px]">العميل المؤهل</span>
+                        <strong class="text-kaf-emerald text-xs">Qualified Lead (محول)</strong>
+                    </div>
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10">
+                        <span class="text-kaf-grayText block text-[10px]">العميل المتعاقد</span>
+                        <strong class="text-kaf-gold text-xs">Closed Deal (Our SMS)</strong>
+                    </div>
+                </div>
+
+                <!-- Core KPIs Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-gray-300">
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="text-kaf-cyan font-bold block">Lead Generation & Contact Rate</span>
+                        <p>قياس حجم قواعد البيانات المضافة ونسبة محاولات التواصل والمكالمات الناجحة فعلياً.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="text-kaf-emerald font-bold block">Decision Maker Reach Rate</span>
+                        <p>نسبة نجاح الفريق في التحدث المباشر مع المسئول وصانع القرار داخل الشركة.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-1">
+                        <span class="text-kaf-purple font-bold block">Lead Qualification Rate</span>
+                        <p>نسبة تحويل العملاء المتواصل معهم إلى فرص بيعية جادة ومؤهلة للاستلام النهائي.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 10 — 3-MONTH EXECUTION TIMELINE                                     -->
+        <!-- ========================================================================= -->
+        <section id="slide-10" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-kaf-border pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-kaf-cyan/20 text-kaf-cyan font-black text-xs border border-kaf-cyan/40">10</span>
+                    <h2 class="text-2xl font-black text-white">خطة التنفيذ على مدار ثلاثة أشهر</h2>
+                </div>
+                <span class="text-xs text-kaf-cyan font-bold hidden sm:inline">3-Month Operational Timeline</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Month 1 -->
+                <div class="web-card-cyan rounded-3xl p-6 space-y-4">
+                    <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                        <span class="text-xs font-mono font-bold text-kaf-cyan">MONTH 01</span>
+                        <i class="fa-solid fa-gears text-kaf-cyan"></i>
+                    </div>
+                    <h3 class="text-base font-black text-white">الشهر الأول: التأسيس والتشغيل</h3>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-start gap-1.5"><i class="fa-solid fa-circle-dot text-kaf-cyan mt-1 text-[8px]"></i> <span>دراسة حلول Our SMS وتحديد الـ ICP.</span></li>
+                        <li class="flex items-start gap-1.5"><i class="fa-solid fa-circle-dot text-kaf-cyan mt-1 text-[8px]"></i> <span>تجهيز الفريق، نظام الاتصال، والـ CRM.</span></li>
+                        <li class="flex items-start gap-1.5"><i class="fa-solid fa-circle-dot text-kaf-cyan mt-1 text-[8px]"></i> <span>بناء قاعدة البيانات الأولية وبدء التواصل.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Month 2 -->
+                <div class="web-card-emerald rounded-3xl p-6 space-y-4">
+                    <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                        <span class="text-xs font-mono font-bold text-kaf-emerald">MONTH 02</span>
+                        <i class="fa-solid fa-chart-line text-kaf-emerald"></i>
+                    </div>
+                    <h3 class="text-base font-black text-white">الشهر الثاني: التحسين والتوسع</h3>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-start gap-1.5"><i class="fa-solid fa-circle-dot text-kaf-emerald mt-1 text-[8px]"></i> <span>استمرار الحملات وتحسين جودة البيانات.</span></li>
+                        <li class="flex items-start gap-1.5"><i class="fa-solid fa-circle-dot text-kaf-emerald mt-1 text-[8px]"></i> <span>تطوير سيناريوهات التواصل والتعامل مع الرفض.</span></li>
+                        <li class="flex items-start gap-1.5"><i class="fa-solid fa-circle-dot text-kaf-emerald mt-1 text-[8px]"></i> <span>رفع نسبة جودة التحويل للفرص الجادة.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Month 3 -->
+                <div class="web-card-purple rounded-3xl p-6 space-y-4">
+                    <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                        <span class="text-xs font-mono font-bold text-kaf-purple">MONTH 03</span>
+                        <i class="fa-solid fa-award text-kaf-purple"></i>
+                    </div>
+                    <h3 class="text-base font-black text-white">الشهر الثالث: رفع الكفاءة والتقييم</h3>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-start gap-1.5"><i class="fa-solid fa-circle-dot text-kaf-purple mt-1 text-[8px]"></i> <span>التركيز على القطاعات الأعلى استجابة.</span></li>
+                        <li class="flex items-start gap-1.5"><i class="fa-solid fa-circle-dot text-kaf-purple mt-1 text-[8px]"></i> <span>زيادة كفاءة وتوثيق متابعة الفرص.</span></li>
+                        <li class="flex items-start gap-1.5"><i class="fa-solid fa-circle-dot text-kaf-purple mt-1 text-[8px]"></i> <span>إعداد تقرير ختامي بالتوصيات والنتائج.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 11 — ADDED VALUE & BUSINESS IMPACT                                  -->
+        <!-- ========================================================================= -->
+        <section id="slide-11" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-kaf-border pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-kaf-emerald/20 text-kaf-emerald font-black text-xs border border-kaf-emerald/40">11</span>
+                    <h2 class="text-2xl font-black text-white">القيمة المضافة والأثر التجاري المستهدف</h2>
+                </div>
+                <span class="text-xs text-kaf-emerald font-bold hidden sm:inline">Value Proposition & ROI Impact</span>
+            </div>
+
+            <div class="web-card-emerald rounded-3xl p-8 space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+                        <i class="fa-solid fa-network-wired text-kaf-emerald text-xl"></i>
+                        <h4 class="font-bold text-white">توسع النطاق التجاري</h4>
+                        <p class="text-gray-300">الوصول لشرائح جديدة وقطاعات اقتصادية لم تكن مغطاة بالسابق دون أعباء توظيف مسبقة.</p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+                        <i class="fa-solid fa-database text-kaf-cyan text-xl"></i>
+                        <h4 class="font-bold text-white">قواعد بيانات منظمة</h4>
+                        <p class="text-gray-300">امتلاك قاعدة بيانات تجارية موثقة ومصنفة للشركات بالسوق السعودي لاستمرار النشاط.</p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2">
+                        <i class="fa-solid fa-bullseye text-kaf-purple text-xl"></i>
+                        <h4 class="font-bold text-white">فرص مؤهلة عالية الجودة</h4>
+                        <p class="text-gray-300">توفير وقت فريق Our SMS للتركيز المباشر على إغلاق الصفقات والتعاقد الفني بدلاً من الاتصالات الأولى.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 12 — FINANCIAL INVESTMENT & COMMERCIAL OFFER                        -->
+        <!-- ========================================================================= -->
+        <section id="slide-12" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-kaf-border pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-kaf-gold/20 text-kaf-gold font-black text-xs border border-kaf-gold/40">12</span>
+                    <h2 class="text-2xl font-black text-white">الاستثمار المالي والعرض التجاري</h2>
+                </div>
+                <span class="text-xs text-kaf-gold font-bold hidden sm:inline">Commercial Investment Offer</span>
+            </div>
+
+            <!-- Price Box -->
+            <div class="web-card-gold p-8 sm:p-10 rounded-3xl space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                    <div class="md:col-span-7 space-y-2">
+                        <span class="text-xs text-kaf-gold font-bold uppercase tracking-wider">SALES TEAM OUTSOURCING OFFER</span>
+                        <h3 class="text-2xl font-black text-white">استثمار خدمة توفير فريق المبيعات الخارجي</h3>
+                        <p class="text-xs text-gray-300">القيمة المعتمدة لتوفير وإدارة المنظومة البيعية كاملة لمدة ثلاثة أشهر متواصلة لصالح Our SMS.</p>
+                    </div>
+
+                    <div class="md:col-span-5 text-center bg-black/60 border border-kaf-gold/50 rounded-2xl p-6">
+                        <span class="text-xs text-gray-400 block mb-1">إجمالي قيمة الخدمة (3 أشهر)</span>
+                        <div class="text-4xl font-black text-kaf-gold font-ibm">
+                            10,500 <span class="text-xl font-cairo">ر.س</span>
+                        </div>
+                        <span class="text-[11px] text-gray-400 block mt-2">فقط عشرة آلاف وخمسمائة ريال سعودي</span>
+                    </div>
+                </div>
+
+                <!-- Financial Table -->
+                <div class="overflow-x-auto rounded-2xl border border-white/10">
+                    <table class="w-full text-right text-xs sm:text-sm">
+                        <thead class="bg-black/60 text-gray-300 font-bold border-b border-white/10">
+                            <tr>
+                                <th class="p-4">تفاصيل مكونات خدمة توفير فريق المبيعات B2B</th>
+                                <th class="p-4 text-center">مدة التعاقد</th>
+                                <th class="p-4 text-center">التكلفة المالية الإجمالية</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 text-gray-200">
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-bold text-white">
+                                    منظومة توفير وإدارة فريق المبيعات الخارجي المتخصص شاملة:
+                                    <div class="font-normal text-xs text-gray-400 mt-1">
+                                        • توفير وتدريب موظفي المبيعات على حلول Our SMS<br>
+                                        • نظام الاتصال VoIP وتسجيل المكالمات وإدارة الأرقام<br>
+                                        • نظام CRM المخصص لإدارة العملاء والفرص<br>
+                                        • تجهيز القنوات الرقمية (WhatsApp Business & Profile)<br>
+                                        • بناء وتحديث قواعد البيانات وتأهيل العملاء المحولين
+                                    </div>
+                                </td>
+                                <td class="p-4 text-center text-gray-300 font-bold">3 أشهر كاملة</td>
+                                <td class="p-4 text-center font-bold text-kaf-gold font-mono text-base">10,500 SAR</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- VAT Note -->
+                <div class="p-4 rounded-xl bg-black/40 border border-kaf-amber/40 text-xs text-gray-300 flex items-center gap-3">
+                    <i class="fa-solid fa-circle-info text-kaf-amber text-lg"></i>
+                    <span>تنويه رسمي: تترك حالة ضريبة القيمة المضافة (VAT) للتأكيد وإدراجها بوضوح في عقد الاتفاق النهائي قبل إصدار الفاتورة الرسمية.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SLIDE 13 — CONCLUSION & CALL TO PARTNERSHIP                               -->
+        <!-- ========================================================================= -->
+        <section id="slide-13" class="web-card-cyan rounded-[32px] p-8 sm:p-12 text-center space-y-8 relative overflow-hidden">
+            <div class="kaf-ribbon absolute top-0 left-0 right-0"></div>
+
+            <div class="max-w-2xl mx-auto space-y-4">
+                <i class="fa-solid fa-quote-right text-3xl text-kaf-cyan"></i>
+                <h2 class="text-2xl font-black text-white leading-relaxed">
+                    "نحن في KAF Group لا نوفر مجرد موظفي اتصالات، بل نبني منظومة مبيعات خارجية متكاملة تضمن وصول حلول Our SMS إلى صناع القرار وتحويل الفرص الاستراتيجية إلى صفقات حقيقية."
+                </h2>
+            </div>
+
+            <div class="pt-6 border-t border-white/10 max-w-md mx-auto space-y-4">
+                <span class="text-xs font-mono font-bold text-kaf-cyan uppercase tracking-widest block">READY TO START THE PARTNERSHIP</span>
+                <h3 class="text-xl font-black text-white">جاهزون لبدء تشغيل المنظومة البيعية لـ Our SMS</h3>
+                
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="https://wa.me/966579346395?text=السلام%20عليكم،%20أود%20تأكيد%20اعتماد%20عرض%20توفير%20فريق%20المبيعات%20بقيمة%2010500%20ريال" target="_blank" class="px-8 py-3 rounded-2xl bg-gradient-to-r from-kaf-cyan via-kaf-cyanDark to-kaf-emerald text-white font-black text-xs hover:brightness-110 shadow-glow-cyan transition flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>اعتماد عرض فريق المبيعات (10,500 ر.س)</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-kaf-border bg-kaf-navy/95 py-8 text-xs text-gray-400 mt-16 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-lg overflow-hidden bg-black border border-kaf-cyan/40 p-0.5">
+                    <img src="https://i.ibb.co/qKTyhpv/Whats-App-Image-2026-08-26-at-11-29-58.jpg" alt="KAF Group Logo" class="w-full h-full object-cover rounded">
+                </div>
+                <div>
+                    <span class="block font-bold text-white">KAF Group</span>
+                    <span class="block text-[10px] text-kaf-grayText">B2B Sales Operations • Market Expansion</span>
+                </div>
+            </div>
+
+            <div class="text-center md:text-right">
+                <span class="block font-bold text-gray-200">عرض فني وتجاري – خدمة توفير فريق مبيعات متخصص</span>
+                <span class="block text-kaf-grayText text-[11px]">مقدم لشركة Our SMS • هاتف: +966 57 934 6395</span>
+            </div>
+
+            <div class="text-kaf-grayText font-mono text-[10px]">
+                &copy; KAF Group. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE CANVAS SCRIPT -->
+    <script>
+        (function() {
+            const canvas = document.getElementById('interactive-canvas');
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let particles = [];
+            const particleCount = 45;
+            const colors = ['#00C6FF', '#0072FF', '#10B981', '#8B5CF6', '#F59E0B'];
+
+            let mouse = { x: null, y: null, radius: 140 };
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+
+            window.addEventListener('resize', resize);
+            window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+            window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.vx = (Math.random() - 0.5) * 0.7;
+                    this.vy = (Math.random() - 0.5) * 0.7;
+                    this.radius = Math.random() * 2 + 1;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.alpha = Math.random() * 0.4 + 0.3;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > width) this.vx *= -1;
+                    if (this.y < 0 || this.y > height) this.vy *= -1;
+
+                    if (mouse.x !== null && mouse.y !== null) {
+                        let dx = mouse.x - this.x;
+                        let dy = mouse.y - this.y;
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < mouse.radius) {
+                            let force = (mouse.radius - distance) / mouse.radius;
+                            this.x -= (dx / distance) * force * 3;
+                            this.y -= (dy / distance) * force * 3;
+                        }
+                    }
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.globalAlpha = this.alpha;
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                resize();
+                particles = [];
+                for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+            }
+
+            function connect() {
+                for (let a = 0; a < particles.length; a++) {
+                    for (let b = a + 1; b < particles.length; b++) {
+                        let dx = particles[a].x - particles[b].x;
+                        let dy = particles[a].y - particles[b].y;
+                        let dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 130) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y);
+                            ctx.strokeStyle = '#00C6FF';
+                            ctx.globalAlpha = (1 - dist / 130) * 0.2;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                for (let p of particles) { p.update(); p.draw(); }
+                connect();
+                requestAnimationFrame(animate);
+            }
+
+            window.onload = () => { init(); animate(); };
+        })();
+    </script>
+</body>
+</html>
